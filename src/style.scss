@@ -1,5 +1,7 @@
 $main-color: #689f38;
 
+@import "./mixins.scss";
+
 html,
 body,
 ul,
@@ -16,17 +18,13 @@ h1 {
   padding: 1rem;}
 }
 
-
-
 .blog {
   display: flex;
   .list {
     padding-right: 1rem;
     .title {
     max-width: 33vw;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    @include ellipsis();
     font-size: 1.6180339rem;
     line-height: 2.71828rem;
     padding-left: 1rem;
