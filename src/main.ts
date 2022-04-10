@@ -1,29 +1,10 @@
+import { Post, Author, Comment  } from "./model/post";
+
 const apiUrl:string = 'https://jsonplaceholder.typicode.com';
 const postsUrl:string = apiUrl + '/posts';
 const commentsUrl:string = `${apiUrl}/comments`;
 const usersUrl:string = `${apiUrl}/users`;
 
-interface Author {
-    id: number;
-    name: string;
-    username: string;
-    email: string;
-};
-
-interface Post {
-    userId: number;
-    id: number,
-    title: string;
-    body: string;
-};
-
-interface Comment {
-    postId: number;
-    id: number;
-    name: string;
-    email: string;
-    body: string;
-}
 
 async function getApiResponse(url:string): Promise<any> {
     const postsRequest:Promise<Response> = fetch(url);
